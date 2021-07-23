@@ -1,5 +1,5 @@
 /* Giphy API URL and KEY */
-var api_url = 'http://api.giphy.com/v1/gifs/search?';
+var api_url = 'https://api.giphy.com/v1/gifs/search?';
 var api_key = 'dc6zaTOxFJmzC'
 
 function clearContent() {
