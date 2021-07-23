@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" tupe="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" tupe="text/css" href="css/stylesheet.css">
+        <title>GIF Search Engine</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/mail-send.png" alt="[LOGO]" style="vertical-align: -15%"> GIF Search Engine</a>
+        </div>
+    </nav>    
+
+    <div class="container searchContainer">
+        <div class="search card card-body">
+            <h1>Search for the best GIFs online!</h1>
+            <p class="lead">Using GIPHY's API GIF Search Engine will get you what you are looking for.</p>
+            <input placeholder="Seach for anything you can think of!" type="text" id="searchUser" class="form-control">
+            <div class="container mt-4">
+				<div class="float-end">
+					<button type="button" id="buttonSearch" class="btn btn-primary">Search</button>
+					<button type="button" id="buttonClear" class="btn btn-secondary" data-dismiss="modal">Clear</button>
+				</div>
+			</div>
+        </div>
+        <br>
+        <!-- placeholder for engine.js -->
+        <div id="searchResults"></div>
+    </div>
+
+    <footer class="mt-2 p-3 text-center">
+        <hr class="my-2">
+        GIF Search Engine
+        <br>
+        A JavaScript web application written by
+        <br>
+        <a href="https://rnsavinelli.github.io/">R. Nicolás Savinelli</a>
+    </footer>    
+
+    <script type="text/javascript" src="./js/engine.js"></script>
+    <script type="text/javascript" src="./js/eventListeners.js"></script>
+</body>
+
+</html>
