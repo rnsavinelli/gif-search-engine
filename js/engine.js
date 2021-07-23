@@ -37,17 +37,32 @@ function displayError(error) {
     container.innerHTML += "<p class=\"text-center\">" + error + "</p>"
 }
 
+function createCORSRequest(method, url){
+    var xhr = new XMLHttpRequest();
+    if ("withCredentials" in xhr){
+        xhr.open(method, url, true);
+    } else if (typeof XDomainRequest != "undefined"){
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+    } else {
+        xhr = null;
+    }
+    return xhr;
+}
+
 /* Search engine */
 function search(input) {
     // AJAX Request
     var url = api_url + 'q=' + input.replace(/\ /g, "+").replace(/[^a-zA-Z ]/g, "") + '&api_key=' + api_key
 
-    var GiphyAJAXCall = new XMLHttpRequest();
-    GiphyAJAXCall.open( 'GET', url );
-    GiphyAJAXCall.send();
+    var GiphyAJAXCall = createCORSRequest('GET', url );
 
-    GiphyAJAXCall.addEventListener('load',function(e){
-        var data = e.target.response;
-        displayContent(data);
-    });
+    if (GiphyAJAXCall){
+        GiphyAJAXCall.send();
+
+        GiphyAJAXCall.addEventListener('load',function(e){
+            var data = e.target.response;
+            displayContent(data);
+        });        
+    }
 }
