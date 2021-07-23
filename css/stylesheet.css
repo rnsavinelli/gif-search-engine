@@ -1,4 +1,6 @@
 .container-image {
+	max-width: 85%;
 	margin-left: 5%;
+	margin-right: 5%;
 	margin-top: 5%;
 }
