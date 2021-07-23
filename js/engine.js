@@ -11,7 +11,6 @@ function displayContent(input) {
     clearContent()
 
     var response = JSON.parse(input);
-    console.log(response)
   
     if (String(response.meta.status) === '200') {
         var imageUrls = response.data;
